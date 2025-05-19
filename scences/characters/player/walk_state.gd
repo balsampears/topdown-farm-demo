@@ -22,7 +22,7 @@ func _on_physics_process(delta)->void:
 	
 func _on_next_transitions()->void:
 	if !GameInputEvent.movement_input():
-		transition.emit('idle')
+		transition.emit('Idle')
 	
 func _on_enter()->void:
 	pass

@@ -16,3 +16,7 @@ static func movement_input()->Vector2:
 	else:
 		direction = Vector2.ZERO
 	return direction
+
+static func is_hit()->bool:
+	return Input.is_action_just_pressed("hit")
+	

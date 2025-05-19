@@ -396,13 +396,15 @@ size = Vector2(12, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3srfe")
-player_tools = 1
+current_tool = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dyt25")
-animation = &"chopping_right"
+animation = &"chopping_front"
 autoplay = "idle_front"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -410,7 +412,7 @@ shape = SubResource("RectangleShape2D_vdpsc")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_dyt25")
-initial_node_state = NodePath("Chopping")
+initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite")]
 script = ExtResource("4_dyt25")

@@ -17,7 +17,11 @@ func _on_physics_process(delta)->void:
 	
 func _on_next_transitions()->void:
 	if GameInputEvent.movement_input():
-		transition.emit('walk')
+		transition.emit('Walk')
+		
+	if GameInputEvent.is_hit():	
+		if player.current_tool == DataTypes.Tools.AxeWood:
+			transition.emit("Chopping")
 	
 func _on_enter()->void:
 	pass
