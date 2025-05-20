@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqj0g4on82es8"]
+
+[ext_resource type="Texture2D" uid="uid://dc4ghg3bmdojn" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_6lls2"]
+[ext_resource type="PackedScene" uid="uid://0if4oxprfbxj" path="res://scences/components/hurt_component.tscn" id="2_c61le"]
+[ext_resource type="Script" uid="uid://dv0vc8iifr0xs" path="res://scences/objects/trees/small_tree.gd" id="2_dpjti"]
+[ext_resource type="PackedScene" uid="uid://cipv7x26l00x1" path="res://scences/components/damage_component.tscn" id="4_savai"]
+[ext_resource type="Shader" uid="uid://dlk0tq662km" path="res://scences/objects/trees/tree_shake.gdshader" id="4_xq25h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xq25h"]
+resource_local_to_scene = true
+shader = ExtResource("4_xq25h")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c61le"]
+atlas = ExtResource("1_6lls2")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lls2"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpjti"]
+size = Vector2(8, 14)
+
+[node name="SmallTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_xq25h")
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_c61le")
+script = ExtResource("2_dpjti")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_6lls2")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_c61le")]
+tool = 1
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_dpjti")
+
+[node name="DamageComponent" parent="." instance=ExtResource("4_savai")]
+max_damage = 3
+
+[connection signal="hurt" from="HurtComponent" to="." method="_on_hurt_component_hurt"]
+[connection signal="max_damage_reached" from="DamageComponent" to="." method="_on_damage_component_max_damage_reached"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d15m6ngf3qukf"]
+
+[ext_resource type="Script" uid="uid://bsxlwvjlgwksk" path="res://scences/components/interactable_component.gd" id="1_l33v5"]
+
+[node name="InteractableComponent" type="Area2D"]
+script = ExtResource("1_l33v5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

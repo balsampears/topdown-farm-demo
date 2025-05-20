@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if cur_node_state:
 		cur_node_state._on_physics_process(delta)
 		cur_node_state._on_next_transitions()
-		print('当前状态：', cur_node_state_name)
+		#print('当前状态：', cur_node_state_name)
 		
 func transition_to(next_node_name: String)->void:
 	next_node_name = next_node_name.to_lower()
@@ -44,7 +44,7 @@ func transition_to(next_node_name: String)->void:
 		cur_node_state._on_exit()
 		
 	next_node._on_enter()
-	print('进入',next_node_name,'状态')
+	#print('进入',next_node_name,'状态')
 	cur_node_state_name = next_node_name
 	cur_node_state = next_node
 		
