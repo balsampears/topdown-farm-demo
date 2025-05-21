@@ -3,7 +3,7 @@ extends Sprite2D
 @onready var hurt_component: HurtComponent = $HurtComponent
 @onready var damage_component: DamageComponent = $DamageComponent
 
-var log_scence = preload("res://scences/objects/log.tscn")
+var log_scence = preload("res://scences/objects/trees/log.tscn")
 
 func _ready() -> void:
 	hurt_component.connect("hurt", on_hurt)
@@ -11,7 +11,7 @@ func _ready() -> void:
 func on_hurt(hit_damage:int)->void:
 	damage_component.apply_damage(hit_damage)
 	var shader_material = material as ShaderMaterial
-	shader_material.set_shader_parameter("shake_intensity", 1)
+	shader_material.set_shader_parameter("shake_intensity", 0.5)
 	await get_tree().create_timer(0.5).timeout
 	shader_material.set_shader_parameter("shake_intensity", 0)
 
