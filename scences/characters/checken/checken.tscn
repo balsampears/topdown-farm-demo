@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cgmcnj4fbra7f" path="res://scences/characters/checken/checken.gd" id="1_7qlrp"]
 [ext_resource type="Texture2D" uid="uid://4ex2oht6nmeq" path="res://assets/game/characters/chicken.png" id="1_bchgv"]
 [ext_resource type="Script" uid="uid://c14jr5fuld51l" path="res://scripts/state_machine/node_state_machine.gd" id="2_duggq"]
-[ext_resource type="Script" uid="uid://b6t5nvwv8lna0" path="res://scences/characters/checken/idle_state.gd" id="3_7qlrp"]
-[ext_resource type="Script" uid="uid://bwc6yqigh7uoa" path="res://scences/characters/checken/walk_state.gd" id="5_s73wv"]
+[ext_resource type="Script" uid="uid://b6t5nvwv8lna0" path="res://scences/characters/npc_states/idle_state.gd" id="3_7qlrp"]
+[ext_resource type="Script" uid="uid://bwc6yqigh7uoa" path="res://scences/characters/npc_states/walk_state.gd" id="5_s73wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8xh1"]
 atlas = ExtResource("1_bchgv")
@@ -65,6 +65,7 @@ animations = [{
 radius = 4.0
 
 [node name="Checken" type="CharacterBody2D"]
+collision_layer = 64
 script = ExtResource("1_7qlrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -79,21 +80,23 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_o3grv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+path_postprocessing = 1
 avoidance_enabled = true
 radius = 5.0
-debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_duggq")
 initial_node_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("checken", "animated_sprite")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite")]
 script = ExtResource("3_7qlrp")
-checken = NodePath("../..")
+character = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
+idle_interval_time = 5.0
 
-[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("checken", "animated_sprite", "navigation_agent")]
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite", "navigation_agent")]
 script = ExtResource("5_s73wv")
-checken = NodePath("../..")
+character = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
 navigation_agent = NodePath("../../NavigationAgent2D")

@@ -1,6 +1,6 @@
 extends NodeState
 
-@export var checken:Checken
+@export var character:NonPlayableCharacter
 @export var animated_sprite:AnimatedSprite2D
 @export var idle_interval_time:float = 3.0
 

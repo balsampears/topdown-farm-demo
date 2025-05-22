@@ -37,6 +37,10 @@ folder_colors={
 "res://tilesets/": "yellow"
 }
 
+[global_group]
+
+navigation_polygon_source_geometry_group=""
+
 [input]
 
 move_up={
@@ -74,10 +78,12 @@ hit={
 2d_physics/layer_1="Ground"
 2d_navigation/layer_1="Checken"
 2d_physics/layer_2="Player"
+2d_navigation/layer_2="Cow"
 2d_physics/layer_3="interactable"
 2d_physics/layer_4="tool"
 2d_physics/layer_5="objects"
 2d_physics/layer_6="collectable"
+2d_physics/layer_7="npc"
 
 [rendering]
 
