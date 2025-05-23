@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://brklm1yrma7rl"]
+
+[ext_resource type="Script" uid="uid://ckv2dauacg31u" path="res://scences/components/day_night_cycle_component.gd" id="1_schc1"]
+[ext_resource type="Texture2D" uid="uid://chacanvqwbkrk" path="res://scences/components/day_night_cycle_component_gradient.tres" id="2_2bwwi"]
+
+[node name="DayNightCycleComponent" type="CanvasModulate"]
+script = ExtResource("1_schc1")
+initial_hour = 0
+day_night_gradient_texture = ExtResource("2_2bwwi")

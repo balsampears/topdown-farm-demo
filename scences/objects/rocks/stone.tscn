@@ -14,7 +14,7 @@ radius = 7.0
 texture = SubResource("AtlasTexture_wowtx")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_wowtx")]
-item_name = "石子"
+item_name = "stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 visible = false

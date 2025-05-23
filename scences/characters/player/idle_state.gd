@@ -24,7 +24,7 @@ func _on_next_transitions()->void:
 			transition.emit("Chopping")
 		elif player.current_tool == DataTypes.Tools.TillGround:
 			transition.emit('Tilling')
-		elif player.current_tool == DataTypes.Tools.PlantCorn:
+		elif player.current_tool == DataTypes.Tools.WateringCan:
 			transition.emit('Watering')
 	
 func _on_enter()->void:

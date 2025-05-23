@@ -5,6 +5,7 @@ enum Tools{
 	None,
 	AxeWood,
 	TillGround,
+	WateringCan,
 	PlantCorn,
 	PlantTomato
 }
