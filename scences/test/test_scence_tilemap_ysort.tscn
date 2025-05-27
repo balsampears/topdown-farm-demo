@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://cpwen8aksvy0k"]
+[gd_scene load_steps=5 format=4 uid="uid://cpwen8aksvy0k"]
 
 [ext_resource type="TileSet" uid="uid://uliq02qrv5l" path="res://tilesets/game_scence_tilemap.tres" id="1_u0bgt"]
 [ext_resource type="PackedScene" uid="uid://bsatvomrpqugm" path="res://scences/characters/player/player.tscn" id="2_fc0sq"]
+[ext_resource type="PackedScene" uid="uid://ct8dekdd8mgry" path="res://scences/ui/game_screen.tscn" id="3_ei7mw"]
+[ext_resource type="PackedScene" uid="uid://dhytacbc42one" path="res://scences/objects/plants/corn.tscn" id="4_s3dmw"]
 
 [node name="TestScenceTilemapYsort" type="Node2D"]
 y_sort_enabled = true
@@ -28,9 +30,24 @@ tile_set = ExtResource("1_u0bgt")
 
 [node name="Overgrowth" type="TileMapLayer" parent="GameTileMap"]
 y_sort_enabled = true
+position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAATAAgABAAAAAMAAAAVAAgABAABAAMAAAAYAAgABAAAAAQAAAAbAAgABAACAAQAAAATAAoABAADAAIAAAAVAAoABAAEAAIAAAAXAAoABAAFAAIAAAATAAwABAAIAAIAAAAVAAwABAAHAAIAAAAXAAwABAAFAAMAAAAZAAwABAAHAAMAAAAbAAwABAADAAAAAAA=")
 tile_set = ExtResource("1_u0bgt")
 
 [node name="Player" parent="." instance=ExtResource("2_fc0sq")]
 position = Vector2(267, 173)
 current_tool = 1
+
+[node name="GameScreen" parent="." instance=ExtResource("3_ei7mw")]
+
+[node name="Corns" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Corn" parent="Corns" instance=ExtResource("4_s3dmw")]
+position = Vector2(202, 221)
+
+[node name="Corn2" parent="Corns" instance=ExtResource("4_s3dmw")]
+position = Vector2(233, 222)
+
+[node name="Corn3" parent="Corns" instance=ExtResource("4_s3dmw")]
+position = Vector2(265, 223)

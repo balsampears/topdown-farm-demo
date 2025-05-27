@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://c0m18dd6u2dju"]
+[gd_scene load_steps=4 format=4 uid="uid://di2g1wgy1vi7u"]
 
 [ext_resource type="TileSet" uid="uid://uliq02qrv5l" path="res://tilesets/game_scence_tilemap.tres" id="1_21387"]
 [ext_resource type="PackedScene" uid="uid://bsatvomrpqugm" path="res://scences/characters/player/player.tscn" id="2_a4h4i"]
-[ext_resource type="PackedScene" uid="uid://c1y6d0ju6pcwn" path="res://scences/ui/game_screen.tscn" id="3_a4h4i"]
+[ext_resource type="PackedScene" uid="uid://ct8dekdd8mgry" path="res://scences/ui/game_screen.tscn" id="3_a4h4i"]
 
 [node name="TestScenceTilemap" type="Node2D"]
 

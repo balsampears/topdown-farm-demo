@@ -404,15 +404,13 @@ collision_layer = 2
 script = ExtResource("1_3srfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dyt25")
-animation = &"chopping_back"
+animation = &"idle_front"
 autoplay = "idle_front"
-frame = 1
-frame_progress = 1.0
+offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_3cod1")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
@@ -454,5 +452,6 @@ hit_component_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D"
 [node name="HitComponent" parent="." instance=ExtResource("8_qomvy")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_qomvy")
 debug_color = Color(0.568557, 0.556651, 0.000656118, 0.42)

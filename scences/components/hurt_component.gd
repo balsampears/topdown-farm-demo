@@ -3,7 +3,7 @@ extends Area2D
 
 @export var tool:DataTypes.Tools = DataTypes.Tools.None
 
-signal hurt
+signal hurt(hit_damage:int)
 
 func _on_area_entered(area: Area2D) -> void:
 	var hit = area as HitComponent

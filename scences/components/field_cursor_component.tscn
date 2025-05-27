@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mh4fq1t0lkcc"]
+
+[ext_resource type="Script" uid="uid://cmvposshxyn1n" path="res://scences/components/field_cursor_component.gd" id="1_57hbf"]
+
+[node name="FieldCursorComponent" type="Node"]
+script = ExtResource("1_57hbf")

@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://pcamnstl5jeq"]
+[gd_scene load_steps=10 format=4 uid="uid://pcamnstl5jeq"]
 
 [ext_resource type="TileSet" uid="uid://uliq02qrv5l" path="res://tilesets/game_scence_tilemap.tres" id="1_tjw8r"]
 [ext_resource type="PackedScene" uid="uid://bsatvomrpqugm" path="res://scences/characters/player/player.tscn" id="2_5y1l8"]
-[ext_resource type="PackedScene" uid="uid://c1y6d0ju6pcwn" path="res://scences/ui/game_screen.tscn" id="3_5y1l8"]
+[ext_resource type="PackedScene" uid="uid://ct8dekdd8mgry" path="res://scences/ui/game_screen.tscn" id="3_5y1l8"]
 [ext_resource type="PackedScene" uid="uid://bcxv8ffvokrv0" path="res://scences/objects/rocks/stone.tscn" id="4_hvfwu"]
 [ext_resource type="PackedScene" uid="uid://bw0n1mwytrw6k" path="res://scences/objects/trees/log.tscn" id="5_v1tjp"]
+[ext_resource type="PackedScene" uid="uid://0mcfueahqsb0" path="res://scences/objects/egg.tscn" id="6_ae54s"]
+[ext_resource type="PackedScene" uid="uid://ddagna0x3kg18" path="res://scences/objects/milk.tscn" id="7_yn6kw"]
+[ext_resource type="PackedScene" uid="uid://dfj84pt1jlj2u" path="res://scences/objects/plants/corn_harvesting.tscn" id="8_1kjsm"]
+[ext_resource type="PackedScene" uid="uid://cngdanoef65l7" path="res://scences/objects/plants/tomato_harvesting.tscn" id="9_wtgsr"]
 
 [node name="TestScenceTilemap" type="Node2D"]
 
@@ -40,3 +44,18 @@ position = Vector2(306, 169)
 
 [node name="Log3" parent="." instance=ExtResource("5_v1tjp")]
 position = Vector2(234, 175)
+
+[node name="Egg" parent="." instance=ExtResource("6_ae54s")]
+position = Vector2(282, 199)
+
+[node name="Milk" parent="." instance=ExtResource("7_yn6kw")]
+position = Vector2(249, 211)
+
+[node name="CornHarvesting" parent="." instance=ExtResource("8_1kjsm")]
+position = Vector2(210, 167)
+
+[node name="TomatoHarvesting" parent="." instance=ExtResource("9_wtgsr")]
+position = Vector2(182, 135)
+
+[node name="TomatoHarvesting2" parent="." instance=ExtResource("9_wtgsr")]
+position = Vector2(182, 168)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://comrrpsciwru0"]
+
+[ext_resource type="Script" uid="uid://r8h3btsbjhh7" path="res://scences/components/crop_cursor_component.gd" id="1_mjavu"]
+
+[node name="CropCursorComponent" type="Node"]
+script = ExtResource("1_mjavu")

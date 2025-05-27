@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhytacbc42one"]
+
+[ext_resource type="Script" uid="uid://dbue4qhbo5ot6" path="res://scences/objects/plants/corn.gd" id="1_1ixu6"]
+[ext_resource type="Texture2D" uid="uid://svsueh3s7w1v" path="res://assets/game/objects/basic_plants.png" id="1_5lp7u"]
+[ext_resource type="PackedScene" uid="uid://dfj84pt1jlj2u" path="res://scences/objects/plants/corn_harvesting.tscn" id="2_j3ysd"]
+[ext_resource type="PackedScene" uid="uid://67rpafjxdu7j" path="res://scences/objects/plants/watering_particales.tscn" id="2_japwv"]
+[ext_resource type="PackedScene" uid="uid://xc5106vmq6aq" path="res://scences/objects/plants/flowering_praticles.tscn" id="3_japwv"]
+[ext_resource type="PackedScene" uid="uid://brscb74asader" path="res://scences/components/growth_cycle_component.tscn" id="5_j3ysd"]
+[ext_resource type="PackedScene" uid="uid://0if4oxprfbxj" path="res://scences/components/hurt_component.tscn" id="6_1ixu6"]
+[ext_resource type="PackedScene" uid="uid://r1wayrrudvur" path="res://scences/components/save_data_component.tscn" id="8_ei5ie"]
+[ext_resource type="Resource" uid="uid://b5phtshf83v1a" path="res://resources/scene_data_resource.tres" id="9_a6oia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldr1g"]
+size = Vector2(13.5, 7.5)
+
+[node name="Corn" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1ixu6")
+corn_harvesting_scence = ExtResource("2_j3ysd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5lp7u")
+offset = Vector2(0, -5)
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="WateringParticales" parent="." instance=ExtResource("2_japwv")]
+
+[node name="FloweringPraticles" parent="." instance=ExtResource("3_japwv")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_j3ysd")]
+days_util_harvesting = 5
+
+[node name="HurtComponent" parent="." instance=ExtResource("6_1ixu6")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ldr1g")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("8_ei5ie")]
+resource = ExtResource("9_a6oia")
+
+[connection signal="crop_harvesting" from="GrowthCycleComponent" to="." method="_on_growth_cycle_component_crop_harvesting"]
+[connection signal="crop_maturity" from="GrowthCycleComponent" to="." method="_on_growth_cycle_component_crop_maturity"]
+[connection signal="hurt" from="HurtComponent" to="." method="_on_hurt_component_hurt"]
