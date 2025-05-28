@@ -28,7 +28,7 @@ func growth_state(current_day:int)->void:
 	var num_state = 5
 	var next_growth_state = (current_day - start_day) % num_state + 1
 	var growth_state_name = DataTypes.GrowthStates.keys()[next_growth_state]
-	print('当前生长状态：',growth_state_name,' 序号:',next_growth_state)
+	#print('当前生长状态：',growth_state_name,' 序号:',next_growth_state)
 	
 	if current_growth_state != next_growth_state:
 		current_growth_state = next_growth_state

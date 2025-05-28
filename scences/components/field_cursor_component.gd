@@ -34,7 +34,7 @@ func get_cell_under_mouse()->void:
 	#print('mouse position:',mouse_position)
 	
 func set_tile()->void:
-	if distance<20.0 and cell_source_id!=-1:
+	if distance<20.0 and cell_source_id != -1:
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrian_set, terrian, true)
 		
 func remove_tile()->void:

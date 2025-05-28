@@ -31,23 +31,33 @@ func get_cell_under_mouse()->void:
 	cell_source_id = tilled_soil_tilemap_layer.get_cell_source_id(cell_position)
 	distance = player.global_position.distance_to(local_cell_position)
 	
-	#print('mouse position:',mouse_position)
+	print('mouse position:',mouse_position, ' cell_position:',cell_position, ' local cell position:', local_cell_position)
+	print('cell source id:',cell_source_id, ' distance:',distance)
 	
 func add_crops()->void:
-	if distance<20.0:
-		if ToolManager.current_tool == DataTypes.Tools.PlantCorn:
-			var corn = corn_scene.instantiate() as Node2D
-			corn.global_position = local_cell_position
-			crops.add_child(corn)
-		if ToolManager.current_tool == DataTypes.Tools.PlantTomato:
-			var tomato = tomato_scene.instantiate() as Node2D
-			tomato.global_position = local_cell_position
-			crops.add_child(tomato)
+	if distance<20.0 and cell_source_id != -1:
+		#去重
+		var crop:Node2D = get_crop_by_crops()
+		if crop == null:
+			if ToolManager.current_tool == DataTypes.Tools.PlantCorn:
+				var corn = corn_scene.instantiate() as Node2D
+				corn.global_position = local_cell_position
+				crops.add_child(corn)
+			if ToolManager.current_tool == DataTypes.Tools.PlantTomato:
+				var tomato = tomato_scene.instantiate() as Node2D
+				tomato.global_position = local_cell_position
+				crops.add_child(tomato)
 			
 		
 func remove_crops()->void:
 	if distance<20.0:
-		for crop:Node2D in crops.get_children():
-			if crop.global_position == local_cell_position:
-				crop.queue_free()
-				break
+		var crop:Node2D = get_crop_by_crops()
+		if crop != null:
+			crop.queue_free()
+				
+func get_crop_by_crops()->Node2D:
+	for crop:Node2D in crops.get_children():
+		if crop.global_position == local_cell_position:
+			return crop
+	return null
+	

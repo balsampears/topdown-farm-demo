@@ -21,6 +21,8 @@ ToolManager="*res://scripts/global/tool_manager.gd"
 InventoryManager="*res://scripts/global/inventory_manager.gd"
 DayAndNightManager="*res://scripts/global/day_and_night_manager.gd"
 SaveGameManager="*res://scripts/global/save_game_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameDialogueManager="*res://scripts/global/game_dialogue_manager.gd"
 
 [display]
 
@@ -35,10 +37,15 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="Topdown Farm Demo"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
 "res://assets/": "orange",
+"res://dialogue/": "teal",
 "res://resources/": "purple",
 "res://scences/": "green",
 "res://scripts/": "pink",
@@ -93,9 +100,18 @@ save_game={
 }
 remove_tilled={
 "deadzone": 0.2,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"button_mask":1,"position":Vector2(160, 21),"global_position":Vector2(172, 81),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(233, 19),"global_position":Vector2(247, 92),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+show_dialogue={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue")
 
 [layer_names]
 

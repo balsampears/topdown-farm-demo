@@ -1,0 +1,205 @@
+[gd_scene load_steps=23 format=3 uid="uid://cqq7umggwi5m0"]
+
+[ext_resource type="Theme" uid="uid://64cnr3lug321" path="res://scences/ui/game_ui_theme.tres" id="1_4qn2o"]
+[ext_resource type="Script" uid="uid://cfkrppo3ifuat" path="res://scences/ui/emote_panel.gd" id="2_ay4oh"]
+[ext_resource type="Texture2D" uid="uid://u6g3kvnh1goi" path="res://assets/ui/emotes.png" id="3_kgdxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am455"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij47j"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcoun"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3thh"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qn8"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndfun"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a5gm"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rf8u"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2lf8"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn6qa"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qn5k"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl673"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy5k4"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nfxr"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbdtb"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xssqk"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yku11"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfqnn"]
+atlas = ExtResource("3_kgdxi")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80xxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am455")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij47j")
+}],
+"loop": true,
+"name": &"emote_12_talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcoun")
+}],
+"loop": true,
+"name": &"emote_1_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3thh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qn8")
+}],
+"loop": true,
+"name": &"emote_2_smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndfun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a5gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rf8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2lf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn6qa")
+}],
+"loop": true,
+"name": &"emote_3_ear_wave",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qn5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl673")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy5k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nfxr")
+}],
+"loop": true,
+"name": &"emote_4_blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbdtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xssqk")
+}],
+"loop": true,
+"name": &"emote_5_love",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yku11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfqnn")
+}],
+"loop": true,
+"name": &"emote_8_excited",
+"speed": 5.0
+}]
+
+[node name="EmotePanel" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_4qn2o")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_ay4oh")
+
+[node name="Emote" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Emote"]
+position = Vector2(20, 22)
+sprite_frames = SubResource("SpriteFrames_80xxd")
+animation = &"emote_12_talk"
+autoplay = "emote_1_idle"
+
+[node name="EmoteIdleTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="EmoteIdleTimer" to="." method="_on_emote_idle_timer_timeout"]

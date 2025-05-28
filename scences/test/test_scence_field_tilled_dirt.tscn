@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://c3fpcngajly34"]
+[gd_scene load_steps=13 format=4 uid="uid://c3fpcngajly34"]
 
 [ext_resource type="PackedScene" uid="uid://brklm1yrma7rl" path="res://scences/components/day_night_cycle_component.tscn" id="1_mjaj8"]
 [ext_resource type="PackedScene" uid="uid://ct8dekdd8mgry" path="res://scences/ui/game_screen.tscn" id="2_awch3"]
 [ext_resource type="TileSet" uid="uid://uliq02qrv5l" path="res://tilesets/game_scence_tilemap.tres" id="3_y4o8n"]
 [ext_resource type="PackedScene" uid="uid://mh4fq1t0lkcc" path="res://scences/components/field_cursor_component.tscn" id="4_idalr"]
+[ext_resource type="PackedScene" uid="uid://r1wayrrudvur" path="res://scences/components/save_data_component.tscn" id="4_ya83q"]
+[ext_resource type="Resource" uid="uid://bswkdyxkfy23f" path="res://resources/tilemap_layer_data_resource.tres" id="5_bv6qw"]
 [ext_resource type="PackedScene" uid="uid://bsatvomrpqugm" path="res://scences/characters/player/player.tscn" id="5_leojx"]
 [ext_resource type="PackedScene" uid="uid://comrrpsciwru0" path="res://scences/components/crop_cursor_component.tscn" id="5_mjaj8"]
 [ext_resource type="PackedScene" uid="uid://dhytacbc42one" path="res://scences/objects/plants/corn.tscn" id="6_y4o8n"]
@@ -29,8 +31,10 @@ tile_map_data = PackedByteArray("AAAVAAsAAAABAAEAAAAVAAoAAAABAAEAAAAVAAkAAAABAAE
 tile_set = ExtResource("3_y4o8n")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
-tile_map_data = PackedByteArray("AAALAAYABwACAAAAAAAKAAYABwAAAAAAAAAKAAcABwAAAAEAAAAKAAgABwAAAAIAAAALAAgABwACAAIAAAALAAcABwACAAEAAAA=")
 tile_set = ExtResource("3_y4o8n")
+
+[node name="SaveDataComponent" parent="GameTileMap/TilledSoil" instance=ExtResource("4_ya83q")]
+resource = ExtResource("5_bv6qw")
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("4_idalr")]
 grass_tilemap_layer = NodePath("../GameTileMap/Grass")
