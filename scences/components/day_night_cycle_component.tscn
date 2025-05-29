@@ -5,5 +5,5 @@
 
 [node name="DayNightCycleComponent" type="CanvasModulate"]
 script = ExtResource("1_schc1")
-initial_hour = 0
+initial_hour = 8
 day_night_gradient_texture = ExtResource("2_2bwwi")

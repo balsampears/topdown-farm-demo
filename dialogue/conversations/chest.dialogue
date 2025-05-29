@@ -1,0 +1,15 @@
+~ start_cow_pasture_box
+牧场箱子: [[嗨|你好]]，你的小动物已经饿了
+牧场箱子: 你想喂养一下你的牛吗？
+- 是
+	do GameDialogueManager.action_feed_animals()
+- 否
+=> END
+
+~ start_checken_pasture_box
+牧场箱子: [[嗨|你好]]，你的小动物已经饿了
+牧场箱子: 你想喂养一下你的鸡吗？
+- 是
+	do GameDialogueManager.action_feed_animals()
+- 否
+=> END

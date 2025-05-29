@@ -5,7 +5,7 @@
 马洛: 你需要种一些庄稼来喂它们。
 马洛: 这里有一些种庄稼的种子。
 - 太好了我正好需要。
-	do GameDialogueManager.give_some_crops_seed()
+	do GameDialogueManager.action_give_crops_seed()
 - 抱歉，我还没有准备好。
 
 => END
